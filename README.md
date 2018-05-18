@@ -23,6 +23,6 @@ Then run ```FindAllPairs.java``` file to see result like below
 
 ## Idea:
 Read each element called ```n``` in given array. 
-If ```x % n == 0``` - we check to make sure ```a * b = X```, we will store ```<(x / n) = z, (index of n)>``` to hashmap.
+If ```x % n == 0``` - because ```a * b = X``` can not have float when modulus, we will store ```<(x / n) = z, (index of n)>``` to hashmap.
 
 Because in the future when we read array, if we meet ```z``` again - we can know it by checking in hashmap, that number is what we are looking for; Remember that we store ```z``` in hashmap as key, not ```n```. Then we will take value of that number stored in hashmap and current index as index of pair number that multiply equal X.
