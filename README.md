@@ -22,7 +22,8 @@ Then run ```FindAllPairs.java``` file to see result like below
 ```
 
 ## Idea:
-Read each element called ```n``` in given array. 
-If ```x % n == 0``` - because ```a * b = X``` can not have float when modulus, we will store ```<(x / n) = z, (index of n)>``` to hashmap.
+First create a ```HashMap<Integer, Integer>``` to store value that will be explained below.
 
-Because in the future when we read array, if we meet ```z``` again - we can know it by checking in hashmap, that number is what we are looking for; Remember that we store ```z``` in hashmap as key, not ```n```. Then we will take value of that number stored in hashmap and current index as index of pair number that multiply equal X.
+Then Loop through all elements in an array. For each element, called ```n```, I will check if ```X % n == 0```. I make this check because ```a * b = X``` can not have fixed number when make X divide either a or b.
+
+Then if above condition met, I will check if X divide n has already existed as key in hashmap, I will call this condition is C2 for convention. If not exist, I will simply put ```<X / n, current index of n>``` to hashmap. Because if n is equal a in ```a * b = X``` then X / n equals b and store X divide n as key will make look up time much faster; and I also store current index because what we need is the index of the pair. What if C2 exist key, we just simply get the value of n that already stored in hashmap and the current index, that’s the pair of index we are looking for and you can store these values to whatever data structure you want.
